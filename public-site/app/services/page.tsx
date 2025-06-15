@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 import {
   SparklesIcon,
   HeartIcon,
@@ -8,68 +8,124 @@ import {
   CogIcon,
   UserGroupIcon,
   ClockIcon,
-} from '@heroicons/react/24/outline';
+} from "@heroicons/react/24/outline";
 
 const services = [
   {
     id: 1,
-    name: 'General Dentistry',
-    description: 'Comprehensive dental care including cleanings, fillings, and routine checkups.',
+    name: "Dental Medicine",
+    description:
+      "Comprehensive dental care including cleanings, fillings, and routine checkups.",
     icon: ShieldCheckIcon,
-    duration: '30-60 min',
-    price: 'From €50',
-    features: ['Regular Checkups', 'Dental Cleanings', 'Cavity Fillings', 'Oral Health Assessment'],
-    image: 'https://images.pexels.com/photos/3845810/pexels-photo-3845810.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+    duration: "30-60 min",
+    price: "From €50",
+    features: [
+      "Dental Examination and Diagnosis",
+      "Dental Cleanings",
+      "Cavity Fillings",
+      "Endodontics",
+      "Tooth Extractions",
+      "First Aid",
+    ],
+    image:
+      "https://images.pexels.com/photos/3845810/pexels-photo-3845810.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
   },
   {
     id: 2,
-    name: 'Cosmetic Dentistry',
-    description: 'Transform your smile with our advanced cosmetic dental procedures.',
+    name: "Aesthetic Dentistry",
+    description:
+      "Transform your smile with our advanced cosmetic dental procedures.",
     icon: SparklesIcon,
-    duration: '60-120 min',
-    price: 'From €200',
-    features: ['Teeth Whitening', 'Veneers', 'Bonding', 'Smile Makeover'],
-    image: 'https://images.pexels.com/photos/6812540/pexels-photo-6812540.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+    duration: "60-120 min",
+    price: "From €200",
+    features: ["Teeth Whitening", "Fillers", "Teeth Bonding", "Smile Makeover"],
+    image:
+      "https://images.pexels.com/photos/6812540/pexels-photo-6812540.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
   },
   {
     id: 3,
-    name: 'Orthodontics',
-    description: 'Straighten your teeth with traditional braces or modern clear aligners.',
+    name: "Orthodontics",
+    description:
+      "Straighten your teeth with traditional braces or modern clear aligners.",
     icon: CogIcon,
-    duration: '45-90 min',
-    price: 'From €1500',
-    features: ['Traditional Braces', 'Clear Aligners', 'Retainers', 'Bite Correction'],
-    image: 'https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+    duration: "45-90 min",
+    price: "From €1500",
+    features: [
+      "Fixed Braces",
+      "Metal Braces",
+      "Porcelain Braces",
+      "Self-Ligating",
+      "Clear Aligners",
+      "Removable Braces",
+      "Myofunctional Appliances",
+    ],
+    image:
+      "https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
   },
   {
     id: 4,
-    name: 'Oral Surgery',
-    description: 'Expert surgical procedures including extractions and implant placement.',
+    name: "Oral Surgery",
+    description:
+      "Expert surgical procedures including extractions and implant placement.",
     icon: HeartIcon,
-    duration: '60-180 min',
-    price: 'From €300',
-    features: ['Tooth Extractions', 'Dental Implants', 'Wisdom Teeth', 'Bone Grafting'],
-    image: 'https://images.pexels.com/photos/5452268/pexels-photo-5452268.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+    duration: "60-180 min",
+    price: "From €300",
+    features: [
+      "Syrgical Tooth Extractions",
+      "Cystectomy",
+      "Apicoectomy",
+      "Gingivoplasty",
+    ],
+    image:
+      "https://images.pexels.com/photos/5452268/pexels-photo-5452268.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
   },
   {
     id: 5,
-    name: 'Pediatric Dentistry',
-    description: 'Gentle, specialized dental care designed specifically for children.',
-    icon: UserGroupIcon,
-    duration: '30-45 min',
-    price: 'From €40',
-    features: ['Child-Friendly Care', 'Preventive Treatments', 'Fluoride Applications', 'Sealants'],
-    image: 'https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+    name: "Implantology",
+    description:
+      "Expert surgical procedures including extractions and implant placement.",
+    icon: HeartIcon,
+    duration: "60-180 min",
+    price: "From €300",
+    features: [
+      "Two-Piece Implants",
+      "One-Piece Implants",
+      "All-on-4 Implants",
+      "All-on-6 Implants",
+      "Sinus Lift",
+    ],
+    image:
+      "https://images.pexels.com/photos/5452268/pexels-photo-5452268.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
   },
   {
     id: 6,
-    name: 'Emergency Care',
-    description: '24/7 emergency dental services for urgent dental problems.',
+    name: "Prosthetic Dentistry",
+    description:
+      "Gentle, specialized dental care designed specifically for children.",
+    icon: UserGroupIcon,
+    duration: "30-45 min",
+    price: "From €40",
+    features: [
+      "Dental Crowns",
+      "Dental Bridges",
+      "Veneers",
+      "Inlays and Onlays",
+      "Full Dentures",
+      "Partial Dentures",
+    ],
+    image:
+      "https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+  },
+  {
+    id: 7,
+    name: "X-Ray Diagnostics",
+    description: "24/7 emergency dental services for urgent dental problems.",
     icon: ClockIcon,
-    duration: '30-90 min',
-    price: 'From €80',
-    features: ['24/7 Availability', 'Pain Relief', 'Emergency Repairs', 'Urgent Treatments'],
-    image: 'https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+    duration: "30-90 min",
+    price: "From €80",
+    features: ["Panoramic X-Rays", "3D X-Ray (CBCT)"],
+    image:
+      "https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
   },
 ];
 
@@ -113,7 +169,10 @@ export default function ServicesPage() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-200">Services</span>
+              Our{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-200">
+                Services
+              </span>
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
               Comprehensive dental care with state-of-the-art technology and
@@ -132,12 +191,14 @@ export default function ServicesPage() {
             whileInView="visible"
             viewport={{ once: true }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            {...({} as any)}
           >
             {services.map((service) => (
               <motion.div
                 key={service.id}
                 variants={itemVariants}
                 className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group hover:-translate-y-2"
+                {...({} as any)}
               >
                 {/* Service Image */}
                 <div className="relative h-48 overflow-hidden">
@@ -201,6 +262,7 @@ export default function ServicesPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             className="text-center mb-16"
+            {...({} as any)}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Why Choose <span className="gradient-text">Our Services</span>
@@ -215,23 +277,27 @@ export default function ServicesPage() {
             {[
               {
                 icon: ShieldCheckIcon,
-                title: 'Advanced Technology',
-                description: 'State-of-the-art equipment for precise and comfortable treatments.',
+                title: "Advanced Technology",
+                description:
+                  "State-of-the-art equipment for precise and comfortable treatments.",
               },
               {
                 icon: HeartIcon,
-                title: 'Personalized Care',
-                description: 'Tailored treatment plans designed specifically for your needs.',
+                title: "Personalized Care",
+                description:
+                  "Tailored treatment plans designed specifically for your needs.",
               },
               {
                 icon: UserGroupIcon,
-                title: 'Expert Team',
-                description: 'Experienced professionals with specialized training and certifications.',
+                title: "Expert Team",
+                description:
+                  "Experienced professionals with specialized training and certifications.",
               },
               {
                 icon: ClockIcon,
-                title: 'Flexible Scheduling',
-                description: 'Convenient appointment times that fit your busy lifestyle.',
+                title: "Flexible Scheduling",
+                description:
+                  "Convenient appointment times that fit your busy lifestyle.",
               },
             ].map((feature, index) => (
               <motion.div
@@ -241,6 +307,7 @@ export default function ServicesPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="text-center group"
+                {...({} as any)}
               >
                 <div className="bg-gradient-to-br from-[#44B0B6] to-[#3A9BA1] rounded-2xl p-6 mb-4 inline-block group-hover:scale-110 transition-transform duration-300">
                   <feature.icon className="h-8 w-8 text-white" />

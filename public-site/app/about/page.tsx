@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 import {
   HeartIcon,
   ShieldCheckIcon,
@@ -8,79 +8,90 @@ import {
   AcademicCapIcon,
   TrophyIcon,
   SparklesIcon,
-} from '@heroicons/react/24/outline';
+} from "@heroicons/react/24/outline";
 
 const values = [
   {
     icon: HeartIcon,
-    title: 'Patient-Centered Care',
-    description: 'Every decision we make is focused on what\'s best for our patients\' health and comfort.',
+    title: "Patient-Centered Care",
+    description:
+      "Every decision we make is focused on what's best for our patients' health and comfort.",
   },
   {
     icon: ShieldCheckIcon,
-    title: 'Quality & Safety',
-    description: 'We maintain the highest standards of quality and safety in all our treatments.',
+    title: "Quality & Safety",
+    description:
+      "We maintain the highest standards of quality and safety in all our treatments.",
   },
   {
     icon: UserGroupIcon,
-    title: 'Professional Excellence',
-    description: 'Our team continuously updates their skills to provide the most advanced care.',
+    title: "Professional Excellence",
+    description:
+      "Our team continuously updates their skills to provide the most advanced care.",
   },
   {
     icon: AcademicCapIcon,
-    title: 'Continuous Learning',
-    description: 'We stay at the forefront of dental innovation through ongoing education.',
+    title: "Continuous Learning",
+    description:
+      "We stay at the forefront of dental innovation through ongoing education.",
   },
 ];
 
 const achievements = [
   {
     icon: TrophyIcon,
-    title: 'Award-Winning Practice',
-    description: 'Recognized for excellence in dental care and patient satisfaction.',
+    title: "Award-Winning Practice",
+    description:
+      "Recognized for excellence in dental care and patient satisfaction.",
   },
   {
     icon: SparklesIcon,
-    title: 'Modern Technology',
-    description: 'Equipped with the latest dental technology for optimal results.',
+    title: "Modern Technology",
+    description:
+      "Equipped with the latest dental technology for optimal results.",
   },
   {
     icon: UserGroupIcon,
-    title: '5000+ Happy Patients',
-    description: 'Trusted by thousands of patients across Macedonia.',
+    title: "5000+ Happy Patients",
+    description: "Trusted by thousands of patients across Macedonia.",
   },
   {
     icon: ShieldCheckIcon,
-    title: '15+ Years Experience',
-    description: 'Over a decade of providing exceptional dental care.',
+    title: "15+ Years Experience",
+    description: "Over a decade of providing exceptional dental care.",
   },
 ];
 
 const timeline = [
   {
-    year: '2008',
-    title: 'Foundation',
-    description: 'Dr. Marko Zebekov established the first clinic in Skopje with a vision to provide world-class dental care.',
+    year: "2008",
+    title: "Foundation",
+    description:
+      "Dr. Marko Zebekov established the first clinic in Skopje with a vision to provide world-class dental care.",
   },
   {
-    year: '2012',
-    title: 'Expansion',
-    description: 'Opened our second location in Ohrid to serve patients across Macedonia.',
+    year: "2012",
+    title: "Expansion",
+    description:
+      "Opened our second location in Ohrid to serve patients across Macedonia.",
   },
   {
-    year: '2016',
-    title: 'Technology Upgrade',
-    description: 'Invested in state-of-the-art digital equipment and modern treatment methods.',
+    year: "2016",
+    title: "Technology Upgrade",
+    description:
+      "Invested in state-of-the-art digital equipment and modern treatment methods.",
   },
   {
-    year: '2020',
-    title: 'Team Growth',
-    description: 'Expanded our team with specialized dentists in various fields of dentistry.',
+    year: "2020",
+    title: "Team Growth",
+    description:
+      "Expanded our team with specialized dentists in various fields of dentistry.",
   },
   {
-    year: '2024',
-    title: 'Innovation Leader',
-    description: 'Became the leading dental practice in Macedonia with cutting-edge treatments.',
+    year: "2024",
+    title: "Innovation Leader",
+    description:
+      "Became the leading dental practice in Macedonia with cutting-edge treatments.",
   },
 ];
 
@@ -103,7 +114,10 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-200">Zebekov</span>
+              About{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-200">
+                Zebekov
+              </span>
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
               Dedicated to providing exceptional dental care with compassion,
@@ -128,22 +142,25 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                 <p>
-                  Founded in 2008 by Dr. Marko Zebekov, Dental Center Zebekov began
-                  with a simple yet powerful vision: to provide world-class dental
-                  care that combines advanced technology with genuine compassion.
+                  Founded in 2008 by Dr. Marko Zebekov, Dental Center Zebekov
+                  began with a simple yet powerful vision: to provide
+                  world-class dental care that combines advanced technology with
+                  genuine compassion.
                 </p>
                 <p>
-                  What started as a small practice in Skopje has grown into Macedonia's
-                  premier dental center, serving thousands of patients across two
-                  convenient locations. Our commitment to excellence has never wavered,
-                  and we continue to invest in the latest technology and training
-                  to ensure our patients receive the best possible care.
+                  What started as a small practice in Skopje has grown into
+                  Macedonia's premier dental center, serving thousands of
+                  patients across two convenient locations. Our commitment to
+                  excellence has never wavered, and we continue to invest in the
+                  latest technology and training to ensure our patients receive
+                  the best possible care.
                 </p>
                 <p>
-                  Today, we're proud to be recognized as leaders in dental innovation,
-                  offering comprehensive services from routine cleanings to complex
-                  surgical procedures, all delivered with the personal touch that
-                  has made us a trusted name in Macedonian dentistry.
+                  Today, we're proud to be recognized as leaders in dental
+                  innovation, offering comprehensive services from routine
+                  cleanings to complex surgical procedures, all delivered with
+                  the personal touch that has made us a trusted name in
+                  Macedonian dentistry.
                 </p>
               </div>
             </motion.div>
@@ -154,6 +171,7 @@ export default function AboutPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
               className="relative"
+              {...({} as any)}
             >
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                 <img
@@ -166,13 +184,19 @@ export default function AboutPage() {
               {/* Floating stats */}
               <div className="absolute -bottom-8 -left-8 bg-white rounded-2xl p-6 shadow-xl">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-[#44B0B6] mb-1">15+</div>
-                  <div className="text-sm text-gray-600">Years of Excellence</div>
+                  <div className="text-3xl font-bold text-[#44B0B6] mb-1">
+                    15+
+                  </div>
+                  <div className="text-sm text-gray-600">
+                    Years of Excellence
+                  </div>
                 </div>
               </div>
               <div className="absolute -top-8 -right-8 bg-white rounded-2xl p-6 shadow-xl">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-[#44B0B6] mb-1">5000+</div>
+                  <div className="text-3xl font-bold text-[#44B0B6] mb-1">
+                    5000+
+                  </div>
                   <div className="text-sm text-gray-600">Happy Patients</div>
                 </div>
               </div>
@@ -190,6 +214,7 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             className="text-center mb-16"
+            {...({} as any)}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Our <span className="gradient-text">Values</span>
@@ -209,6 +234,7 @@ export default function AboutPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center group hover:-translate-y-2"
+                {...({} as any)}
               >
                 <div className="bg-gradient-to-br from-[#44B0B6] to-[#3A9BA1] rounded-2xl p-4 inline-block mb-6 group-hover:scale-110 transition-transform duration-300">
                   <value.icon className="h-8 w-8 text-white" />
@@ -234,13 +260,14 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             className="text-center mb-16"
+            {...({} as any)}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Our <span className="gradient-text">Journey</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From humble beginnings to becoming Macedonia's leading dental practice,
-              here's our story of growth and innovation.
+              From humble beginnings to becoming Macedonia's leading dental
+              practice, here's our story of growth and innovation.
             </p>
           </motion.div>
 
@@ -257,10 +284,15 @@ export default function AboutPage() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   className={`flex items-center ${
-                    index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+                    index % 2 === 0 ? "flex-row" : "flex-row-reverse"
                   }`}
+                  {...({} as any)}
                 >
-                  <div className={`w-1/2 ${index % 2 === 0 ? 'pr-12 text-right' : 'pl-12 text-left'}`}>
+                  <div
+                    className={`w-1/2 ${
+                      index % 2 === 0 ? "pr-12 text-right" : "pl-12 text-left"
+                    }`}
+                  >
                     <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
                       <div className="text-2xl font-bold text-[#44B0B6] mb-2">
                         {item.year}
@@ -294,13 +326,14 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             className="text-center mb-16"
+            {...({} as any)}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Our <span className="gradient-text">Achievements</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Recognition and milestones that reflect our commitment to excellence
-              in dental care and patient satisfaction.
+              Recognition and milestones that reflect our commitment to
+              excellence in dental care and patient satisfaction.
             </p>
           </motion.div>
 
@@ -313,6 +346,7 @@ export default function AboutPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center group hover:-translate-y-2"
+                {...({} as any)}
               >
                 <div className="bg-gradient-to-br from-[#44B0B6] to-[#3A9BA1] rounded-2xl p-4 inline-block mb-6 group-hover:scale-110 transition-transform duration-300">
                   <achievement.icon className="h-8 w-8 text-white" />
@@ -342,9 +376,9 @@ export default function AboutPage() {
               Join Our Dental Family
             </h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Experience the difference that personalized, professional dental care
-              can make. Schedule your appointment today and discover why thousands
-              of patients trust us with their smiles.
+              Experience the difference that personalized, professional dental
+              care can make. Schedule your appointment today and discover why
+              thousands of patients trust us with their smiles.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-[#44B0B6] font-semibold py-4 px-8 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">

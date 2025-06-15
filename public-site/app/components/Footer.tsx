@@ -1,49 +1,49 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { motion } from 'framer-motion';
+import Link from "next/link";
+import { motion } from "framer-motion";
 import {
   PhoneIcon,
   EnvelopeIcon,
   MapPinIcon,
   ClockIcon,
-} from '@heroicons/react/24/outline';
+} from "@heroicons/react/24/outline";
 
 const footerLinks = {
   services: [
-    'General Dentistry',
-    'Cosmetic Dentistry',
-    'Orthodontics',
-    'Oral Surgery',
-    'Preventive Care',
-    'Emergency Care',
+    "General Dentistry",
+    "Cosmetic Dentistry",
+    "Orthodontics",
+    "Oral Surgery",
+    "Preventive Care",
+    "Emergency Care",
   ],
   quickLinks: [
-    { name: 'About Us', href: '/about' },
-    { name: 'Services', href: '/services' },
-    { name: 'Locations', href: '/locations' },
-    { name: 'Contact', href: '/contact' },
+    { name: "About Us", href: "/about" },
+    { name: "Services", href: "/services" },
+    { name: "Locations", href: "/locations" },
+    { name: "Contact", href: "/contact" },
   ],
 };
 
 const contactInfo = [
   {
     icon: PhoneIcon,
-    label: 'Phone',
-    value: '+389 70 123 456',
-    href: 'tel:+38970123456',
+    label: "Phone",
+    value: "+389 70 515 734",
+    href: "tel:+38970123456",
   },
   {
     icon: EnvelopeIcon,
-    label: 'Email',
-    value: 'info@zebekov.mk',
-    href: 'mailto:info@zebekov.mk',
+    label: "Email",
+    value: "info@zebekov.mk",
+    href: "mailto:info@zebekov.mk",
   },
   {
     icon: MapPinIcon,
-    label: 'Address',
-    value: 'Skopje & Ohrid, Macedonia',
-    href: '/locations',
+    label: "Address",
+    value: "Skopje & Ohrid, Macedonia",
+    href: "/locations",
   },
 ];
 
@@ -61,6 +61,7 @@ export default function Footer() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
               className="lg:col-span-1"
+              {...({} as any)}
             >
               <Link href="/" className="flex items-center space-x-3 mb-6">
                 <img
@@ -70,7 +71,8 @@ export default function Footer() {
                 />
                 <div>
                   <h3 className="text-lg font-bold">
-                    Dental Center <span className="text-[#44B0B6]">Zebekov</span>
+                    Dental Center{" "}
+                    <span className="text-[#44B0B6]">Zebekov</span>
                   </h3>
                 </div>
               </Link>
@@ -167,7 +169,8 @@ export default function Footer() {
         <div className="container-custom py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} Dental Center Zebekov. All rights reserved.
+              © {new Date().getFullYear()} Dental Center Zebekov. All rights
+              reserved.
             </p>
             <div className="flex space-x-6 text-sm text-gray-400">
               <Link href="#" className="hover:text-[#44B0B6] transition-colors">

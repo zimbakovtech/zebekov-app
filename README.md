@@ -126,17 +126,6 @@ API is available at `http://127.0.0.1:8000/api/`.
 
 ---
 
-## 🤝 Contributing
-
-1. Fork the repo  
-2. Create a feature branch: `git checkout -b feat/awesome`  
-3. Commit your changes  
-4. Push to your fork & open a PR  
-
-Please keep code style consistent (ESLint/Prettier for JS, Black for Python).
-
----
-
 ## 📄 License
 
 Released under the MIT License. See [LICENSE](LICENSE) for details.

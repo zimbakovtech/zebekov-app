@@ -11,7 +11,10 @@
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.3.3"
+    "next": "15.3.3",
+    "lucide-react": "^0.263.1",
+    "framer-motion": "^10.16.4",
+    "@heroicons/react": "^2.0.18"
   },
   "devDependencies": {
     "typescript": "^5",

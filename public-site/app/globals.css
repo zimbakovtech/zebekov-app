@@ -7,23 +7,10 @@
   --primary-dark: #3a9ba1;
   --primary-light: #5bc0c6;
   --background: #ffffff;
-  --foreground: #1a1a1a;
-  --gray-50: #f9fafb;
-  --gray-100: #f3f4f6;
-  --gray-200: #e5e7eb;
-  --gray-300: #d1d5db;
-  --gray-400: #9ca3af;
-  --gray-500: #6b7280;
-  --gray-600: #4b5563;
-  --gray-700: #374151;
-  --gray-800: #1f2937;
-  --gray-900: #111827;
+  --foreground: #171717;
 }
 
 @theme inline {
-  --color-primary: var(--primary-color);
-  --color-primary-dark: var(--primary-dark);
-  --color-primary-light: var(--primary-light);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;

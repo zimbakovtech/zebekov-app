@@ -1,8 +1,8 @@
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import './globals.css';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import '../globals.css';
 
 export const metadata = {
   title: 'Dental Center Zebekov - Your Perfect Smile Starts Here',
@@ -10,7 +10,7 @@ export const metadata = {
   keywords: 'dental care, dentist, Skopje, Ohrid, Macedonia, cosmetic dentistry, orthodontics, oral surgery',
 };
 
-export default async function RootLayout({
+export default async function LocaleLayout({
   children,
   params: {locale}
 }: {

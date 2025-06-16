@@ -14,7 +14,8 @@
     "next": "15.3.3",
     "lucide-react": "^0.263.1",
     "framer-motion": "^10.16.4",
-    "@heroicons/react": "^2.0.18"
+    "@heroicons/react": "^2.0.18",
+    "next-intl": "^3.9.0"
   },
   "devDependencies": {
     "typescript": "^5",

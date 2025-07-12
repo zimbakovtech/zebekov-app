@@ -20,7 +20,8 @@
     "react-datepicker": "^6.1.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.50.1",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "next-intl": "^3.9.0"
   },
   "devDependencies": {
     "@types/react-datepicker": "^6.0.1",

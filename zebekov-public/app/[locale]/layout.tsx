@@ -7,9 +7,9 @@ import "../globals.css";
 export const metadata = {
   title: "Dental Center Zebekov - Your Perfect Smile Starts Here",
   description:
-    "Experience exceptional dental care with our team of expert dentists in Strumica and Novo Selo. Modern technology, comfortable environment, and personalized treatment for every patient.",
+    "Experience exceptional dental care with our team of expert dentists in Skopje and Ohrid. Modern technology, comfortable environment, and personalized treatment for every patient.",
   keywords:
-    "dental care, dentist, Strumica, Novo Selo, Macedonia, cosmetic dentistry, orthodontics, oral surgery",
+    "dental care, dentist, Skopje, Ohrid, Macedonia, cosmetic dentistry, orthodontics, oral surgery",
 };
 
 export default async function LocaleLayout({

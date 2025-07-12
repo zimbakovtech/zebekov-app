@@ -26,6 +26,7 @@
     "combinedYears": "Combined Years",
     "specializations": "Specializations",
     "patientSatisfaction": "Patient Satisfaction",
+<<<<<<< HEAD:zebekov-public/messages/en.json
     "dentalProfessional": "Dental Professional",
     "appointmentsDaily": "Appointments Daily",
     "toskoZebekov": {
@@ -140,6 +141,13 @@
   "footer": {
     "description": "Your trusted partner for comprehensive dental care. We provide exceptional dental services with a focus on comfort, quality, and patient satisfaction.",
     "workingHours": "Mon-Fri: 8:00-20:00 | Sat: 9:00-17:00",
+=======
+    "dentalProfessional": "Dental Professional"
+  },
+  "footer": {
+    "description": "Your trusted partner for comprehensive dental care. We provide exceptional dental services with a focus on comfort, quality, and patient satisfaction.",
+    "workingHours": "Mon-Fri: 8:00-20:00 | Sat: 9:00-15:00",
+>>>>>>> 084604cb4be165d7ab5e5c172967dd98e5938901:public-site/messages/en.json
     "ourServices": "Our Services",
     "quickLinks": "Quick Links",
     "contactInfo": "Contact Info",
@@ -164,6 +172,7 @@
   },
   "about": {
     "title": "About",
+<<<<<<< HEAD:zebekov-public/messages/en.json
     "titleHighlight": "Dental Center Zebekov",
     "subtitle": "Dedicated to providing exceptional dental care with compassion, expertise, and the latest technology for over 25 years.",
     "ourStory": "Our",
@@ -171,6 +180,15 @@
     "storyParagraph1": "Dental Center Zebekov – founded in 1998 by Dr. Toshko Zebekov, began with a simple yet powerful vision: to provide top‑quality dental care that combines advanced technology with genuine compassion.",
     "storyParagraph2": "What started as a small practice in Strumica has grown into a leading dental center in southeastern North Macedonia, serving thousands of patients across two convenient locations. Our commitment to excellence never wavers, and we continue to invest in the latest technology and training to ensure our patients receive the very best care.",
     "storyParagraph3": "Today, we are proud to be recognized as leaders in dental innovation, offering comprehensive services from routine cleanings to complex surgical procedures—all delivered with the personal touch that has made us a trusted name in Macedonian dentistry.",
+=======
+    "titleHighlight": "Zebekov",
+    "subtitle": "Dedicated to providing exceptional dental care with compassion, expertise, and the latest technology for over 15 years.",
+    "ourStory": "Our",
+    "ourStoryHighlight": "Story",
+    "storyParagraph1": "Founded in 2008 by Dr. Marko Zebekov, Dental Center Zebekov began with a simple yet powerful vision: to provide world-class dental care that combines advanced technology with genuine compassion.",
+    "storyParagraph2": "What started as a small practice in Skopje has grown into Macedonia's premier dental center, serving thousands of patients across two convenient locations. Our commitment to excellence has never wavered, and we continue to invest in the latest technology and training to ensure our patients receive the best possible care.",
+    "storyParagraph3": "Today, we're proud to be recognized as leaders in dental innovation, offering comprehensive services from routine cleanings to complex surgical procedures, all delivered with the personal touch that has made us a trusted name in Macedonian dentistry.",
+>>>>>>> 084604cb4be165d7ab5e5c172967dd98e5938901:public-site/messages/en.json
     "yearsOfExcellence": "Years of Excellence",
     "happyPatients": "Happy Patients",
     "ourValues": "Our",
@@ -200,11 +218,19 @@
     "timeline": {
       "2008": {
         "title": "Foundation",
+<<<<<<< HEAD:zebekov-public/messages/en.json
         "description": "Dr. Marko Zebekov established the first clinic in Strumica with a vision to provide world-class dental care."
       },
       "2012": {
         "title": "Expansion",
         "description": "Opened our second location in Novo Selo to serve patients across Macedonia."
+=======
+        "description": "Dr. Marko Zebekov established the first clinic in Skopje with a vision to provide world-class dental care."
+      },
+      "2012": {
+        "title": "Expansion",
+        "description": "Opened our second location in Ohrid to serve patients across Macedonia."
+>>>>>>> 084604cb4be165d7ab5e5c172967dd98e5938901:public-site/messages/en.json
       },
       "2016": {
         "title": "Technology Upgrade",
@@ -223,6 +249,13 @@
     "ourAchievementsHighlight": "Achievements",
     "achievementsSubtitle": "Recognition and milestones that reflect our commitment to excellence in dental care and patient satisfaction.",
     "achievements": {
+<<<<<<< HEAD:zebekov-public/messages/en.json
+=======
+      "awardWinning": {
+        "title": "Award-Winning Practice",
+        "description": "Recognized for excellence in dental care and patient satisfaction."
+      },
+>>>>>>> 084604cb4be165d7ab5e5c172967dd98e5938901:public-site/messages/en.json
       "modernTechnology": {
         "title": "Modern Technology",
         "description": "Equipped with the latest dental technology for optimal results."
@@ -232,8 +265,13 @@
         "description": "Trusted by thousands of patients across Macedonia."
       },
       "experience": {
+<<<<<<< HEAD:zebekov-public/messages/en.json
         "title": "25+ Years Experience",
         "description": "Over two decades of providing exceptional dental care."
+=======
+        "title": "15+ Years Experience",
+        "description": "Over a decade of providing exceptional dental care."
+>>>>>>> 084604cb4be165d7ab5e5c172967dd98e5938901:public-site/messages/en.json
       }
     },
     "joinOurFamily": "Join Our Dental Family",
@@ -353,18 +391,33 @@
         "description": "24/7 emergency dental services for urgent dental problems.",
         "duration": "30-90 min",
         "price": "From €80",
+<<<<<<< HEAD:zebekov-public/messages/en.json
         "features": ["Panoramic X-Rays", "3D X-Ray (CBCT)"]
+=======
+        "features": [
+          "Panoramic X-Rays",
+          "3D X-Ray (CBCT)"
+        ]
+>>>>>>> 084604cb4be165d7ab5e5c172967dd98e5938901:public-site/messages/en.json
       }
     },
     "readyToTransform": "Ready to Transform Your Smile?",
     "readyDescription": "Schedule your consultation today and take the first step towards optimal oral health and a beautiful smile.",
     "bookConsultation": "Book Consultation",
+<<<<<<< HEAD:zebekov-public/messages/en.json
     "callNow": "Call Now: +389 70 515 734"
+=======
+    "callNow": "Call Now: +389 70 123 456"
+>>>>>>> 084604cb4be165d7ab5e5c172967dd98e5938901:public-site/messages/en.json
   },
   "locations": {
     "title": "Our",
     "titleHighlight": "Locations",
+<<<<<<< HEAD:zebekov-public/messages/en.json
     "subtitle": "Visit us at our convenient locations in Strumica and Novo Selo. Modern facilities with the latest dental technology.",
+=======
+    "subtitle": "Visit us at our convenient locations in Skopje and Ohrid. Modern facilities with the latest dental technology.",
+>>>>>>> 084604cb4be165d7ab5e5c172967dd98e5938901:public-site/messages/en.json
     "findUsOnMap": "Find Us on the",
     "findUsOnMapHighlight": "Map",
     "mapSubtitle": "Both of our locations are easily accessible and offer convenient parking options for our patients.",
@@ -380,6 +433,7 @@
     "features": "Features",
     "bookAppointment": "Book Appointment",
     "getDirections": "Get Directions",
+<<<<<<< HEAD:zebekov-public/messages/en.json
     "strumica": {
       "name": "Strumica",
       "address": "Kiro Abrashev 32, 2400 Strumica",
@@ -388,6 +442,16 @@
       "hours": {
         "weekdays": "Monday - Friday: 8:00 - 20:00",
         "saturday": "Saturday: 9:00 - 17:00",
+=======
+    "skopje": {
+      "name": "Skopje Center",
+      "address": "Ul. Makedonija 15, 1000 Skopje",
+      "phone": "+389 70 123 456",
+      "email": "skopje@zebekov.mk",
+      "hours": {
+        "weekdays": "Monday - Friday: 8:00 - 20:00",
+        "saturday": "Saturday: 9:00 - 15:00",
+>>>>>>> 084604cb4be165d7ab5e5c172967dd98e5938901:public-site/messages/en.json
         "sunday": "Sunday: Closed"
       },
       "parking": "Free parking available",
@@ -398,6 +462,7 @@
         "Wheelchair Accessible"
       ]
     },
+<<<<<<< HEAD:zebekov-public/messages/en.json
     "novoselo": {
       "name": "Novo Selo",
       "address": "Marshal Tito 42, 2434 Novo Selo",
@@ -406,6 +471,16 @@
       "hours": {
         "weekdays": "Monday - Friday: 8:00 - 20:00",
         "saturday": "Saturday: 9:00 - 17:00",
+=======
+    "ohrid": {
+      "name": "Ohrid Branch",
+      "address": "Ul. Kej Makedonija 8, 6000 Ohrid",
+      "phone": "+389 70 123 457",
+      "email": "ohrid@zebekov.mk",
+      "hours": {
+        "weekdays": "Monday - Friday: 9:00 - 18:00",
+        "saturday": "Saturday: 10:00 - 14:00",
+>>>>>>> 084604cb4be165d7ab5e5c172967dd98e5938901:public-site/messages/en.json
         "sunday": "Sunday: Closed"
       },
       "parking": "Street parking available",
@@ -438,8 +513,13 @@
       "phonePlaceholder": "+389 70 123 456",
       "preferredLocation": "Preferred Location",
       "selectLocation": "Select location",
+<<<<<<< HEAD:zebekov-public/messages/en.json
       "strumicaCenter": "Strumica Center",
       "novoseloBranch": "Novo Selo Branch",
+=======
+      "skopjeCenter": "Skopje Center",
+      "ohridBranch": "Ohrid Branch",
+>>>>>>> 084604cb4be165d7ab5e5c172967dd98e5938901:public-site/messages/en.json
       "serviceNeeded": "Service Needed",
       "selectService": "Select service",
       "generalDentistry": "General Dentistry",
@@ -458,8 +538,13 @@
     "contactMethods": {
       "phone": {
         "title": "Phone",
+<<<<<<< HEAD:zebekov-public/messages/en.json
         "strumica": "Strumica",
         "novoselo": "Novo Selo"
+=======
+        "skopje": "Skopje",
+        "ohrid": "Ohrid"
+>>>>>>> 084604cb4be165d7ab5e5c172967dd98e5938901:public-site/messages/en.json
       },
       "email": {
         "title": "Email",
@@ -468,8 +553,13 @@
       },
       "locations": {
         "title": "Locations",
+<<<<<<< HEAD:zebekov-public/messages/en.json
         "strumica": "Strumica",
         "novoselo": "Novo Selo"
+=======
+        "skopje": "Skopje",
+        "ohrid": "Ohrid"
+>>>>>>> 084604cb4be165d7ab5e5c172967dd98e5938901:public-site/messages/en.json
       }
     },
     "workingHours": {
@@ -486,7 +576,11 @@
     },
     "visitOurLocations": "Visit Our",
     "visitOurLocationsHighlight": "Locations",
+<<<<<<< HEAD:zebekov-public/messages/en.json
     "visitDescription": "Find us at our convenient locations in Strumica and Novo Selo. Both clinics offer the same high-quality care and modern facilities."
+=======
+    "visitDescription": "Find us at our convenient locations in Skopje and Ohrid. Both clinics offer the same high-quality care and modern facilities."
+>>>>>>> 084604cb4be165d7ab5e5c172967dd98e5938901:public-site/messages/en.json
   },
   "common": {
     "loading": "Loading...",
@@ -517,4 +611,8 @@
     "warning": "Warning",
     "info": "Information"
   }
+<<<<<<< HEAD:zebekov-public/messages/en.json
 }
+=======
+}
+>>>>>>> 084604cb4be165d7ab5e5c172967dd98e5938901:public-site/messages/en.json

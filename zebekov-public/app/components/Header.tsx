@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Bars3Icon, XMarkIcon, PhoneIcon } from "@heroicons/react/24/outline";
+<<<<<<< HEAD:zebekov-public/app/components/Header.tsx
 import { useTranslations, useLocale } from "next-intl";
 import LanguageSwitcher from "./LanguageSwitcher";
 
@@ -25,6 +26,27 @@ export default function Header() {
     { name: t("navigation.locations"), href: `/${locale}/locations` },
     { name: t("navigation.about"), href: `/${locale}/about` },
     { name: t("navigation.contact"), href: `/${locale}/contact` },
+=======
+import { useTranslations } from 'next-intl';
+import LanguageSwitcher from './LanguageSwitcher';
+
+export default function Header() {
+  const t = useTranslations();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/" || pathname === "/mk" || pathname === "/en";
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Remove locale prefix from pathname for comparison
+  const cleanPathname = pathname.replace(/^\/(mk|en)/, '') || '/';
+
+  const navigation = [
+    { name: t('navigation.home'), href: "/" },
+    { name: t('navigation.services'), href: "/services" },
+    { name: t('navigation.locations'), href: "/locations" },
+    { name: t('navigation.about'), href: "/about" },
+    { name: t('navigation.contact'), href: "/contact" },
+>>>>>>> 084604cb4be165d7ab5e5c172967dd98e5938901:public-site/app/components/Header.tsx
   ];
 
   useEffect(() => {
@@ -76,8 +98,12 @@ export default function Header() {
                 key={item.name}
                 href={item.href}
                 className={`relative font-medium transition-colors duration-200 ${
+<<<<<<< HEAD:zebekov-public/app/components/Header.tsx
                   cleanPathname === item.href.replace(`/${locale}`, "") ||
                   (cleanPathname === "/" && item.href === `/${locale}`)
+=======
+                  cleanPathname === item.href
+>>>>>>> 084604cb4be165d7ab5e5c172967dd98e5938901:public-site/app/components/Header.tsx
                     ? "text-[#44B0B6]"
                     : isScrolled
                     ? "text-gray-700 hover:text-[#44B0B6]"
@@ -87,8 +113,12 @@ export default function Header() {
                 }`}
               >
                 {item.name}
+<<<<<<< HEAD:zebekov-public/app/components/Header.tsx
                 {(cleanPathname === item.href.replace(`/${locale}`, "") ||
                   (cleanPathname === "/" && item.href === `/${locale}`)) && (
+=======
+                {cleanPathname === item.href && (
+>>>>>>> 084604cb4be165d7ab5e5c172967dd98e5938901:public-site/app/components/Header.tsx
                   <motion.div
                     layoutId="activeTab"
                     className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#44B0B6]"
@@ -99,9 +129,15 @@ export default function Header() {
             ))}
           </div>
 
+<<<<<<< HEAD:zebekov-public/app/components/Header.tsx
           {/* Contact & Appointment & Language */}
+=======
+          {/* CTA Button & Language Switcher */}
+>>>>>>> 084604cb4be165d7ab5e5c172967dd98e5938901:public-site/app/components/Header.tsx
           <div className="hidden lg:flex items-center space-x-4">
+            <LanguageSwitcher />
             <a
+<<<<<<< HEAD:zebekov-public/app/components/Header.tsx
               href={`tel:${t("header.phone")}`}
               className="flex items-center space-x-2 text-[#44B0B6] hover:text-[#3A9BA1] transition-colors"
             >
@@ -112,6 +148,16 @@ export default function Header() {
               className="btn-primary"
             >
               {t("header.bookAppointment")}
+=======
+              href={`tel:${t('header.phone')}`}
+              className="flex items-center space-x-2 text-[#44B0B6] hover:text-[#3A9BA1] transition-colors"
+            >
+              <PhoneIcon className="h-5 w-5" />
+              <span className="font-medium">{t('header.phone')}</span>
+            </a>
+            <Link href="/contact" className="btn-primary">
+              {t('header.bookAppointment')}
+>>>>>>> 084604cb4be165d7ab5e5c172967dd98e5938901:public-site/app/components/Header.tsx
             </Link>
             <LanguageSwitcher />
           </div>
@@ -149,8 +195,12 @@ export default function Header() {
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`block px-4 py-2 font-medium transition-colors ${
+<<<<<<< HEAD:zebekov-public/app/components/Header.tsx
                       cleanPathname === item.href.replace(`/${locale}`, "") ||
                       (cleanPathname === "/" && item.href === `/${locale}`)
+=======
+                      cleanPathname === item.href
+>>>>>>> 084604cb4be165d7ab5e5c172967dd98e5938901:public-site/app/components/Header.tsx
                         ? "text-[#44B0B6] bg-[#44B0B6]/10"
                         : "text-gray-700 hover:text-[#44B0B6] hover:bg-gray-50"
                     }`}
@@ -159,19 +209,32 @@ export default function Header() {
                   </Link>
                 ))}
                 <div className="px-4 py-2 space-y-3">
+                  <LanguageSwitcher />
                   <a
+<<<<<<< HEAD:zebekov-public/app/components/Header.tsx
                     href={`tel:${t("header.phone")}`}
                     className="flex items-center space-x-2 text-[#44B0B6]"
                   >
                     <PhoneIcon className="h-5 w-5" />
                     <span className="font-medium">{t("header.phone")}</span>
+=======
+                    href={`tel:${t('header.phone')}`}
+                    className="flex items-center space-x-2 text-[#44B0B6]"
+                  >
+                    <PhoneIcon className="h-5 w-5" />
+                    <span className="font-medium">{t('header.phone')}</span>
+>>>>>>> 084604cb4be165d7ab5e5c172967dd98e5938901:public-site/app/components/Header.tsx
                   </a>
                   <Link
                     href={`/${locale}/contact#book-appointment`}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="btn-primary block text-center"
                   >
+<<<<<<< HEAD:zebekov-public/app/components/Header.tsx
                     {t("header.bookAppointment")}
+=======
+                    {t('header.bookAppointment')}
+>>>>>>> 084604cb4be165d7ab5e5c172967dd98e5938901:public-site/app/components/Header.tsx
                   </Link>
                   <LanguageSwitcher />
                 </div>

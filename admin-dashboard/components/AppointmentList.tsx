@@ -2,49 +2,33 @@
 
 import { useState, useEffect } from 'react'
 import { format } from 'date-fns'
-import { PencilIcon, TrashIcon } from '@heroicons/react/24/outline'
 import { appointmentsAPI } from '@/lib/api'
-
-type Appointment = {
-  id: number
-  doctor: {
-    id: number
-    full_name: string
-  }
-  patient_first_name: string
-  patient_last_name: string
-  phone_number: string
-  services: Array<{
-    id: number
-    name: string
-    duration: number
-  }>
-  date: string
-  start_time: string
-  end_time: string
-}
+import type { Appointment } from '@/lib/types'
 
 interface AppointmentListProps {
   onEdit?: (appointment: Appointment) => void;
+  patientNameFilter?: string;
 }
 
-export default function AppointmentList({ onEdit }: AppointmentListProps) {
+export default function AppointmentList({ onEdit, patientNameFilter }: AppointmentListProps) {
   const [appointments, setAppointments] = useState<Appointment[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     fetchAppointments()
-  }, [])
+  }, [patientNameFilter])
 
   const fetchAppointments = async () => {
     try {
       setLoading(true)
-      const response = await appointmentsAPI.getAll()
+      const response = await appointmentsAPI.getAll({ 
+        patient_name: patientNameFilter 
+      })
       setAppointments(response.data)
       setError(null)
     } catch (err) {
-      setError('Failed to fetch appointments')
+      setError('Неуспешно вчитување на термини')
       console.error('Error fetching appointments:', err)
     } finally {
       setLoading(false)
@@ -52,23 +36,51 @@ export default function AppointmentList({ onEdit }: AppointmentListProps) {
   }
 
   const handleDelete = async (id: number) => {
-    if (window.confirm('Are you sure you want to delete this appointment?')) {
+    if (window.confirm('Дали сте сигурни дека сакате да го избришете овој термин?')) {
       try {
         await appointmentsAPI.delete(id)
         setAppointments(appointments.filter(appointment => appointment.id !== id))
       } catch (err) {
         console.error('Error deleting appointment:', err)
-        alert('Failed to delete appointment')
+        alert('Неуспешно бришење на термин')
       }
     }
   }
 
   if (loading) {
-    return <div className="text-center py-4">Loading...</div>
+    return (
+      <div className="flex items-center justify-center py-8">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600"></div>
+        <span className="ml-2 text-gray-600">Се вчитуваат термини...</span>
+      </div>
+    )
   }
 
   if (error) {
-    return <div className="text-center py-4 text-red-600">{error}</div>
+    return (
+      <div className="text-center py-8">
+        <div className="text-red-600 mb-4">{error}</div>
+        <button 
+          onClick={fetchAppointments}
+          className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
+        >
+          Обидете се повторно
+        </button>
+      </div>
+    )
+  }
+
+  if (appointments.length === 0) {
+    return (
+      <div className="text-center py-8">
+        <div className="text-gray-500">Нема пронајдени термини</div>
+        {patientNameFilter && (
+          <div className="text-sm text-gray-400 mt-2">
+            Нема термини за "{patientNameFilter}"
+          </div>
+        )}
+      </div>
+    )
   }
 
   return (
@@ -77,19 +89,22 @@ export default function AppointmentList({ onEdit }: AppointmentListProps) {
         <thead className="bg-gray-50">
           <tr>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Patient
+              Пациент
             </th>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Service
+              Услуга
             </th>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Doctor
+              Доктор
             </th>
             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Date & Time
+              Датум и време
+            </th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Цена
             </th>
             <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Actions
+              Акции
             </th>
           </tr>
         </thead>
@@ -98,40 +113,57 @@ export default function AppointmentList({ onEdit }: AppointmentListProps) {
             <tr key={appointment.id} className="hover:bg-gray-50">
               <td className="px-6 py-4 whitespace-nowrap">
                 <div className="text-sm font-medium text-gray-900">
-                  {appointment.patient_first_name} {appointment.patient_last_name}
+                  {appointment.patient_full_name}
                 </div>
-                <div className="text-sm text-gray-500">{appointment.phone_number}</div>
+                <div className="text-sm text-gray-500">{appointment.patient_phone_number}</div>
               </td>
               <td className="px-6 py-4 whitespace-nowrap">
                 <div className="text-sm text-gray-900">
-                  {appointment.services.map(service => service.name).join(', ')}
+                  {appointment.service ? appointment.service.name : appointment.custom_service_name}
+                </div>
+                <div className="text-sm text-gray-500">
+                  {appointment.duration_minutes} мин
                 </div>
               </td>
               <td className="px-6 py-4 whitespace-nowrap">
                 <div className="text-sm text-gray-900">
                   {appointment.doctor.full_name}
                 </div>
+                <div className="text-sm text-gray-500">
+                  {appointment.doctor.email}
+                </div>
               </td>
               <td className="px-6 py-4 whitespace-nowrap">
                 <div className="text-sm text-gray-900">
-                  {format(new Date(appointment.date), 'MMM d, yyyy')}
+                  {format(new Date(appointment.start_datetime), 'MMM d, yyyy')}
                 </div>
                 <div className="text-sm text-gray-500">
-                  {appointment.start_time} - {appointment.end_time}
+                  {format(new Date(appointment.start_datetime), 'HH:mm')} - {format(new Date(appointment.end_datetime), 'HH:mm')}
+                </div>
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap">
+                <div className="text-sm font-medium text-gray-900">
+                  {appointment.price} МКД
                 </div>
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                 <button
                   onClick={() => handleDelete(appointment.id)}
                   className="text-red-600 hover:text-red-900 mr-4"
+                  title="Избриши термин"
                 >
-                  <TrashIcon className="h-5 w-5" />
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                  </svg>
                 </button>
                 <button
                   onClick={() => onEdit?.(appointment)}
                   className="text-blue-600 hover:text-blue-900"
+                  title="Уреди термин"
                 >
-                  <PencilIcon className="h-5 w-5" />
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                  </svg>
                 </button>
               </td>
             </tr>

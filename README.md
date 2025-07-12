@@ -1,131 +1,240 @@
-# Zebekov Portal
+# Dental Clinic Management System
 
-Monorepo housing both the public‑facing website and the internal admin dashboard for **Dental Center Zebekov**, plus a Django REST API backend for appointment management.
+A comprehensive dental clinic management system with a Django backend API and Next.js admin dashboard.
 
----
+## Features
 
-## 🚀 Project Overview
+### Backend (Django)
 
-- **Public Site** (`public-site/`):  
-  A modern, SEO‑friendly Next.js (App Router) site showcasing the clinic, team, services, locations, and contact form.  
-- **Admin Dashboard** (`admin-dashboard/`):  
-  A protected Next.js area where staff and doctors can log in, view doctor profiles, manage weekly shifts, and schedule appointments via an interactive calendar.  
-- **API Backend** (`backend/`):  
-  Django + Django REST Framework providing JWT‑secured endpoints for users, doctors, shifts, services, and appointments. PostgreSQL in production (SQLite for local dev).
+- **Doctor Management**: CRUD operations for doctors with profile pictures
+- **Service Management**: Predefined services with pricing and duration
+- **Shift Management**: Weekly shift rotation system with automatic doctor assignment
+- **Appointment Management**: Full appointment scheduling with conflict detection
+- **Calendar API**: Week-based calendar view with shifts and appointments
+- **Authentication**: JWT-based authentication system
+- **API Documentation**: Swagger/OpenAPI documentation
 
----
+### Frontend (Next.js Admin Dashboard)
 
-## 🎯 Goals & Features
+- **Dashboard**: Overview with statistics and weekly calendar view
+- **Appointments**: Full CRUD with search functionality and custom services
+- **Doctors**: Doctor management with profile pictures
+- **Services**: Service management with pricing
+- **Shifts**: Shift management and rotation
+- **Responsive Design**: Modern UI with Tailwind CSS
 
-1. **Public Website**  
-   - Home page with hero and call‑to‑action  
-   - Services page listing treatments with durations and pricing  
-   - Locations page with map embeds and photo gallery  
-   - About Us + Contact form to capture inquiries  
+## Tech Stack
 
-2. **Admin Dashboard**  
-   - JWT‑secured login for admins & doctors  
-   - Doctor overview grid (photo, name, phone, “Schedule” button)  
-   - Per‑doctor calendar view: clear “free” vs “booked” slots, multi‑service appointments, custom‑duration entries  
-   - Shift management: assign morning/evening shifts per 4‑week cycle  
-   - Service catalog CRUD and custom‑service support  
+### Backend
 
-3. **Backend API**  
-   - **Users**: custom `User` model with `is_doctor` flag and phone  
-   - **Doctors**: one‑to‑one profile linked to `User`; photo upload  
-   - **Shifts**: weekly shift assignments (1–4, morning/evening)  
-   - **Services**: name, duration, price  
-   - **Appointments**: M2M to services (plus custom overrides), start/end times, patient info  
-   - JWT authentication (via `rest_framework_simplejwt`)  
+- Django 4.x
+- Django REST Framework
+- Django CORS Headers
+- JWT Authentication
+- SQLite (can be changed to PostgreSQL/MySQL)
 
----
+### Frontend
 
-## 🛠️ Tech Stack
+- Next.js 14
+- TypeScript
+- Tailwind CSS
+- React Hook Form
+- Axios
+- Date-fns
 
-| Layer               | Technology                                    |
-| ------------------- | ---------------------------------------------  |
-| **Public Site**     | Next.js (App Router), React, TypeScript, Tailwind CSS |
-| **Admin Dashboard** | Next.js, React, TypeScript, Tailwind CSS, React Query |
-| **API Backend**     | Django, Django REST Framework, Simple JWT, PostgreSQL (SQLite for dev) |
-| **Deployment**      | Docker, Nginx, Gunicorn, GitHub Actions CI/CD |
-| **Monitoring**      | Sentry, basic uptime checks                   |
-
----
-
-## 📁 Repository Structure
-
-```
-zebekov-portal/
-├── public-site/           # Next.js public website
-│   ├── app/
-│   └── components/
-├── admin-dashboard/       # Next.js internal dashboard
-│   ├── app/
-│   └── components/
-├── backend/               # Django + DRF API
-│   ├── backend/           # Django project settings
-│   ├── users/             # Custom user & auth
-│   ├── doctors/           # Doctor & Shift apps
-│   ├── services/          # Service catalog app
-│   ├── appointments/      # Appointment app
-│   ├── manage.py
-│   └── venv/              # Python virtual env (ignored)
-├── .gitignore
-├── LICENSE
-└── README.md
-```
-
----
-
-## 🔧 Getting Started
+## Setup Instructions
 
 ### Prerequisites
 
-- Node.js ≥ 16 & Yarn  
-- Python 3.10+ & pip  
-- PostgreSQL (optional for local dev; SQLite fallback)
+- Python 3.8+
+- Node.js 18+
+- npm or yarn
 
-### 1. Clone & bootstrap
+### Backend Setup
 
-```bash
-git clone https://github.com/your‑org/zebekov-portal.git
-cd zebekov-portal
-```
+1. **Navigate to backend directory:**
 
-### 2. Front‑end Setup
+   ```bash
+   cd backend
+   ```
 
-```bash
-# Install workspace deps
-yarn install
+2. **Create virtual environment:**
 
-# Dev servers
-yarn workspace public-site dev
-yarn workspace admin-dashboard dev
-```
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
 
-Sites will run on `http://localhost:3000` and `http://localhost:3001` by default.
+3. **Install dependencies:**
 
-### 3. Backend Setup
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-```bash
-cd backend
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+4. **Run migrations:**
 
-# Migrate & create superuser
-python manage.py makemigrations
-python manage.py migrate
-python manage.py createsuperuser
+   ```bash
+   python manage.py makemigrations
+   python manage.py migrate
+   ```
 
-# Run server
-python manage.py runserver
-```
+5. **Initialize with sample data:**
 
-API is available at `http://127.0.0.1:8000/api/`.
+   ```bash
+   python manage.py initialize_clinic
+   ```
 
----
+6. **Create superuser (optional):**
 
-## 📄 License
+   ```bash
+   python manage.py createsuperuser
+   ```
 
-Released under the MIT License. See [LICENSE](LICENSE) for details.
+7. **Run the development server:**
+   ```bash
+   python manage.py runserver
+   ```
+
+The backend will be available at `http://127.0.0.1:8000`
+
+### Frontend Setup
+
+1. **Navigate to admin-dashboard directory:**
+
+   ```bash
+   cd admin-dashboard
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+The frontend will be available at `http://localhost:3000`
+
+## API Endpoints
+
+### Authentication
+
+- `POST /api/token/` - Login
+- `POST /api/token/refresh/` - Refresh token
+
+### Doctors
+
+- `GET /api/doctors/` - List all doctors
+- `POST /api/doctors/` - Create doctor
+- `GET /api/doctors/{id}/` - Get doctor details
+- `PUT /api/doctors/{id}/` - Update doctor
+- `DELETE /api/doctors/{id}/` - Delete doctor
+
+### Services
+
+- `GET /api/services/` - List all services
+- `POST /api/services/` - Create service
+- `PUT /api/services/{id}/` - Update service
+- `DELETE /api/services/{id}/` - Delete service
+
+### Appointments
+
+- `GET /api/appointments/` - List appointments (with optional patient_name filter)
+- `POST /api/appointments/` - Create appointment
+- `GET /api/appointments/{id}/` - Get appointment details
+- `PUT /api/appointments/{id}/` - Update appointment
+- `DELETE /api/appointments/{id}/` - Delete appointment
+- `GET /api/appointments/future/?week={week}` - Get future appointments for a week
+
+### Shifts
+
+- `GET /api/shifts/?week={week}` - List shifts for a week
+- `POST /api/shifts/` - Create shift
+- `PUT /api/shifts/{id}/` - Update shift
+- `DELETE /api/shifts/{id}/` - Delete shift
+- `POST /api/shifts/{id}/doctors/` - Add doctors to shift
+- `DELETE /api/shifts/{id}/doctors/{doctor_id}/` - Remove doctor from shift
+- `POST /api/shifts/generate_week/` - Generate shifts for a week
+
+### Calendar
+
+- `GET /api/calendar/?week={week}` - Get calendar data for a week
+
+## Business Logic
+
+### Shift Rotation
+
+- Two shifts per day: "first" (08:00-13:00) and "second" (13:00-20:00)
+- Saturday has only one shift (first)
+- Automatic doctor rotation between shifts
+- Admin can manually override assignments
+
+### Appointment Scheduling
+
+- Conflict detection prevents overlapping appointments
+- Support for both predefined services and custom services
+- Automatic end time calculation based on duration
+- Price auto-fill from service selection
+
+### Time Zones
+
+- All times are in Europe/Skopje timezone
+- Datetime fields use ISO format
+
+## Sample Data
+
+The initialization command creates:
+
+- 4 sample doctors
+- 6 common dental services with pricing
+- Shift rotation for current and next 4 weeks
+
+## Development
+
+### Backend Development
+
+- API documentation available at `/swagger/` and `/redoc/`
+- Use Django admin at `/admin/` for data management
+- Run tests with `python manage.py test`
+
+### Frontend Development
+
+- TypeScript for type safety
+- ESLint for code quality
+- Tailwind CSS for styling
+- Responsive design for mobile and desktop
+
+## Deployment
+
+### Backend Deployment
+
+1. Set `DEBUG = False` in settings
+2. Configure production database (PostgreSQL recommended)
+3. Set up static file serving
+4. Configure CORS for production domain
+5. Set up environment variables for secrets
+
+### Frontend Deployment
+
+1. Build the application: `npm run build`
+2. Deploy to Vercel, Netlify, or similar
+3. Configure environment variables for API URL
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
+
+## License
+
+MIT License - see LICENSE file for details

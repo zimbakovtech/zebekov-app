@@ -6,11 +6,10 @@ import { doctorsAPI } from '@/lib/api';
 import { Doctor } from '@/lib/types';
 
 type DoctorFormData = {
-  first_name: string;
-  last_name: string;
-  specialization: string;
+  full_name: string;
+  phone_number: string;
   email: string;
-  phone: string;
+  profile_picture_url?: string;
 };
 
 type DoctorFormProps = {
@@ -30,11 +29,10 @@ export default function DoctorForm({ doctor, onSuccess, onCancel }: DoctorFormPr
   } = useForm<DoctorFormData>({
     defaultValues: doctor
       ? {
-          first_name: doctor.first_name,
-          last_name: doctor.last_name,
-          specialization: doctor.specialization,
+          full_name: doctor.full_name,
+          phone_number: doctor.phone_number,
           email: doctor.email,
-          phone: doctor.phone,
+          profile_picture_url: doctor.profile_picture_url,
         }
       : undefined,
   });
@@ -51,125 +49,115 @@ export default function DoctorForm({ doctor, onSuccess, onCancel }: DoctorFormPr
       }
 
       onSuccess?.();
-    } catch (err) {
+    } catch (err: any) {
       console.error('Error saving doctor:', err);
-      setError('Failed to save doctor');
+      setError(err.response?.data?.error || 'Неуспешно зачувување на доктор');
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-      <div className="grid grid-cols-2 gap-4">
+    <div className="bg-white p-6 rounded-lg shadow">
+      <h2 className="text-lg font-medium text-gray-900 mb-6">
+        {doctor ? 'Уреди доктор' : 'Додај нов доктор'}
+      </h2>
+      
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <div>
-          <label htmlFor="first_name" className="block text-sm font-medium text-gray-700">
-            First Name
+          <label htmlFor="full_name" className="block text-sm font-medium text-gray-700">
+            Цело име *
           </label>
           <input
             type="text"
-            id="first_name"
-            {...register('first_name', { required: 'First name is required' })}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#44B0B6] focus:ring-[#44B0B6] sm:text-sm"
+            id="full_name"
+            {...register('full_name', { required: 'Целото име е задолжително' })}
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
           />
-          {errors.first_name && (
-            <p className="mt-1 text-sm text-red-600">{errors.first_name.message}</p>
+          {errors.full_name && (
+            <p className="mt-1 text-sm text-red-600">{errors.full_name.message}</p>
           )}
         </div>
 
         <div>
-          <label htmlFor="last_name" className="block text-sm font-medium text-gray-700">
-            Last Name
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+            Е-пошта *
           </label>
           <input
-            type="text"
-            id="last_name"
-            {...register('last_name', { required: 'Last name is required' })}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#44B0B6] focus:ring-[#44B0B6] sm:text-sm"
+            type="email"
+            id="email"
+            {...register('email', {
+              required: 'Е-поштата е задолжителна',
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: 'Неважечка е-пошта',
+              },
+            })}
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
           />
-          {errors.last_name && (
-            <p className="mt-1 text-sm text-red-600">{errors.last_name.message}</p>
+          {errors.email && (
+            <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
           )}
         </div>
-      </div>
 
-      <div>
-        <label htmlFor="specialization" className="block text-sm font-medium text-gray-700">
-          Specialization
-        </label>
-        <input
-          type="text"
-          id="specialization"
-          {...register('specialization', { required: 'Specialization is required' })}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#44B0B6] focus:ring-[#44B0B6] sm:text-sm"
-        />
-        {errors.specialization && (
-          <p className="mt-1 text-sm text-red-600">{errors.specialization.message}</p>
+        <div>
+          <label htmlFor="phone_number" className="block text-sm font-medium text-gray-700">
+            Телефонски број *
+          </label>
+          <input
+            type="tel"
+            id="phone_number"
+            {...register('phone_number', {
+              required: 'Телефонскиот број е задолжителен',
+            })}
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          />
+          {errors.phone_number && (
+            <p className="mt-1 text-sm text-red-600">{errors.phone_number.message}</p>
+          )}
+        </div>
+
+        <div>
+          <label htmlFor="profile_picture_url" className="block text-sm font-medium text-gray-700">
+            URL на профилна слика
+          </label>
+          <input
+            type="url"
+            id="profile_picture_url"
+            {...register('profile_picture_url')}
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            placeholder="https://example.com/photo.jpg"
+          />
+          {errors.profile_picture_url && (
+            <p className="mt-1 text-sm text-red-600">{errors.profile_picture_url.message}</p>
+          )}
+        </div>
+
+        {error && (
+          <div className="bg-red-50 border border-red-200 rounded-md p-4">
+            <p className="text-sm text-red-600">{error}</p>
+          </div>
         )}
-      </div>
 
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-          Email
-        </label>
-        <input
-          type="email"
-          id="email"
-          {...register('email', {
-            required: 'Email is required',
-            pattern: {
-              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-              message: 'Invalid email address',
-            },
-          })}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#44B0B6] focus:ring-[#44B0B6] sm:text-sm"
-        />
-        {errors.email && (
-          <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
-        )}
-      </div>
-
-      <div>
-        <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-          Phone
-        </label>
-        <input
-          type="tel"
-          id="phone"
-          {...register('phone', {
-            required: 'Phone number is required',
-            pattern: {
-              value: /^\+?[1-9]\d{1,14}$/,
-              message: 'Invalid phone number',
-            },
-          })}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#44B0B6] focus:ring-[#44B0B6] sm:text-sm"
-        />
-        {errors.phone && (
-          <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>
-        )}
-      </div>
-
-      {error && <p className="text-sm text-red-600">{error}</p>}
-
-      <div className="flex justify-end space-x-3">
-        {onCancel && (
+        <div className="flex justify-end space-x-3">
+          {onCancel && (
+            <button
+              type="button"
+              onClick={onCancel}
+              className="rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            >
+              Откажи
+            </button>
+          )}
           <button
-            type="button"
-            onClick={onCancel}
-            className="rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#44B0B6] focus:ring-offset-2"
+            type="submit"
+            disabled={loading}
+            className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-50"
           >
-            Cancel
+            {loading ? 'Се зачувува...' : doctor ? 'Зачувај промени' : 'Додај доктор'}
           </button>
-        )}
-        <button
-          type="submit"
-          disabled={loading}
-          className="rounded-md bg-[#44B0B6] px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-[#3A9A9F] focus:outline-none focus:ring-2 focus:ring-[#44B0B6] focus:ring-offset-2 disabled:opacity-50"
-        >
-          {loading ? 'Saving...' : doctor ? 'Save Changes' : 'Add Doctor'}
-        </button>
-      </div>
-    </form>
+        </div>
+      </form>
+    </div>
   );
 } 

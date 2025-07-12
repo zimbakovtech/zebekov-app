@@ -10,9 +10,13 @@ export const metadata: Metadata = {
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ 
+  children
+}: { 
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en">
+    <html lang="mk">
       <body className={inter.className}>
         <DashboardLayout>{children}</DashboardLayout>
       </body>

@@ -1,4 +1,14 @@
 import axios from 'axios'
+import type { 
+  Appointment, 
+  Doctor, 
+  Service, 
+  Shift, 
+  CalendarData, 
+  FutureAppointmentsData,
+  LoginCredentials,
+  AuthResponse
+} from './types'
 
 const api = axios.create({
   baseURL: 'http://127.0.0.1:8000/api',
@@ -27,12 +37,16 @@ api.interceptors.response.use(
   async (error) => {
     const originalRequest = error.config
 
-    if (error.response.status === 401 && !originalRequest._retry) {
+    if (error.response?.status === 401 && !originalRequest._retry) {
       originalRequest._retry = true
 
       try {
         const refreshToken = localStorage.getItem('refresh_token')
-        const response = await api.post('/token/refresh/', {
+        if (!refreshToken) {
+          throw new Error('No refresh token')
+        }
+        
+        const response = await api.post<AuthResponse>('/token/refresh/', {
           refresh: refreshToken,
         })
 
@@ -55,60 +69,80 @@ api.interceptors.response.use(
 
 // Auth API
 export const authAPI = {
-  login: (username: string, password: string) =>
-    api.post('/token/', { username, password }),
+  login: (credentials: LoginCredentials) =>
+    api.post<AuthResponse>('/token/', credentials),
   refreshToken: (refresh: string) =>
-    api.post('/token/refresh/', { refresh }),
+    api.post<AuthResponse>('/token/refresh/', { refresh }),
 }
 
 // Appointments API
 export const appointmentsAPI = {
-  getAll: () => api.get('/appointments/'),
-  getById: (id: number) => api.get(`/appointments/${id}/`),
-  create: (data: any) => api.post('/appointments/', data),
-  update: (id: number, data: any) => api.put(`/appointments/${id}/`, data),
-  delete: (id: number) => api.delete(`/appointments/${id}/`),
-  getAvailableSlots: () => api.get('/appointments/available_slots/'),
-  getCalendar: () => api.get('/appointments/calendar/'),
-  getDay: () => api.get('/appointments/day/'),
-  getWeek: () => api.get('/appointments/week/'),
+  getAll: (params?: { patient_name?: string }) => 
+    api.get<Appointment[]>('/appointments/', { params }),
+  getById: (id: number) => 
+    api.get<Appointment>(`/appointments/${id}/`),
+  create: (data: Partial<Appointment>) => 
+    api.post<Appointment>('/appointments/', data),
+  update: (id: number, data: Partial<Appointment>) => 
+    api.put<Appointment>(`/appointments/${id}/`, data),
+  delete: (id: number) => 
+    api.delete(`/appointments/${id}/`),
+  getFuture: (week: number) => 
+    api.get<FutureAppointmentsData>(`/appointments/future/?week=${week}`),
 }
 
 // Doctors API
 export const doctorsAPI = {
-  getAll: () => api.get('/doctors/'),
-  getById: (id: number) => api.get(`/doctors/${id}/`),
-  create: (data: any) => api.post('/doctors/', data),
-  update: (id: number, data: any) => api.put(`/doctors/${id}/`, data),
-  delete: (id: number) => api.delete(`/doctors/${id}/`),
+  getAll: () => 
+    api.get<Doctor[]>('/doctors/'),
+  getById: (id: number) => 
+    api.get<Doctor>(`/doctors/${id}/`),
+  create: (data: Partial<Doctor>) => 
+    api.post<Doctor>('/doctors/', data),
+  update: (id: number, data: Partial<Doctor>) => 
+    api.put<Doctor>(`/doctors/${id}/`, data),
+  delete: (id: number) => 
+    api.delete(`/doctors/${id}/`),
 }
 
 // Services API
 export const servicesAPI = {
-  getAll: () => api.get('/services/'),
-  getById: (id: number) => api.get(`/services/${id}/`),
-  create: (data: any) => api.post('/services/', data),
-  update: (id: number, data: any) => api.put(`/services/${id}/`, data),
-  delete: (id: number) => api.delete(`/services/${id}/`),
+  getAll: () => 
+    api.get<Service[]>('/services/'),
+  getById: (id: number) => 
+    api.get<Service>(`/services/${id}/`),
+  create: (data: Partial<Service>) => 
+    api.post<Service>('/services/', data),
+  update: (id: number, data: Partial<Service>) => 
+    api.put<Service>(`/services/${id}/`, data),
+  delete: (id: number) => 
+    api.delete(`/services/${id}/`),
 }
 
 // Shifts API
 export const shiftsAPI = {
-  getAll: () => api.get('/shifts/'),
-  getById: (id: number) => api.get(`/shifts/${id}/`),
-  create: (data: any) => api.post('/shifts/', data),
-  update: (id: number, data: any) => api.put(`/shifts/${id}/`, data),
-  delete: (id: number) => api.delete(`/shifts/${id}/`),
-  updateShift: (id: number, data: any) => api.patch(`/shifts/${id}/update_shift/`, data),
+  getAll: (params?: { week?: number }) => 
+    api.get<Shift[]>('/shifts/', { params }),
+  getById: (id: number) => 
+    api.get<Shift>(`/shifts/${id}/`),
+  create: (data: Partial<Shift>) => 
+    api.post<Shift>('/shifts/', data),
+  update: (id: number, data: Partial<Shift>) => 
+    api.put<Shift>(`/shifts/${id}/`, data),
+  delete: (id: number) => 
+    api.delete(`/shifts/${id}/`),
+  addDoctors: (id: number, doctorIds: number[]) => 
+    api.post(`/shifts/${id}/doctors/`, { doctor_ids: doctorIds }),
+  removeDoctor: (id: number, doctorId: number) => 
+    api.delete(`/shifts/${id}/doctors/${doctorId}/`),
+  generateWeek: (week: number, year?: number) => 
+    api.post('/shifts/generate_week/', { week, year }),
 }
 
-// Schedule Slots API
-export const scheduleSlotsAPI = {
-  getAll: () => api.get('/schedule-slots/'),
-  getById: (id: number) => api.get(`/schedule-slots/${id}/`),
-  create: (data: any) => api.post('/schedule-slots/', data),
-  update: (id: number, data: any) => api.put(`/schedule-slots/${id}/`, data),
-  delete: (id: number) => api.delete(`/schedule-slots/${id}/`),
+// Calendar API
+export const calendarAPI = {
+  getWeek: (week: number) => 
+    api.get<CalendarData>(`/calendar/?week=${week}`),
 }
 
 export default api 

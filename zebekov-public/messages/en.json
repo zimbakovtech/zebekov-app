@@ -1,0 +1,520 @@
+{
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "locations": "Locations",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "trustedBy": "Trusted by 5000+ patients",
+    "title": "Your Perfect",
+    "titleHighlight": "Smile Starts Here",
+    "subtitle": "Experience exceptional dental care with our team of expert dentists. Modern technology, comfortable environment, and personalized treatment for every patient.",
+    "bookAppointment": "Book Your Appointment",
+    "exploreServices": "Explore Services",
+    "yearsExperience": "Years Experience",
+    "happyPatients": "Happy Patients",
+    "locations": "Locations",
+    "scrollToExplore": "Scroll to explore"
+  },
+  "team": {
+    "title": "Meet Our",
+    "titleHighlight": "Expert Team",
+    "subtitle": "Our experienced dental professionals are committed to providing you with the highest quality care in a comfortable and welcoming environment.",
+    "expertDentists": "Expert Dentists",
+    "combinedYears": "Combined Years",
+    "specializations": "Specializations",
+    "patientSatisfaction": "Patient Satisfaction",
+    "dentalProfessional": "Dental Professional",
+    "appointmentsDaily": "Appointments Daily",
+    "toskoZebekov": {
+      "name": "Toshko Zebekov",
+      "title": "Founder & CEO",
+      "specialization": "Oral Surgery Specialist",
+      "description": "Founder of Dental Center Zebekov and experienced dentist with over 30 years of experience."
+    },
+    "gonceVasilevaKoleva": {
+      "name": "Gonce Vasileva Koleva",
+      "title": "Dentist",
+      "specialization": "Orthodontics Specialist",
+      "description": "Orthodontist with over 10 years of experience, specialized in general and aesthetic dentistry."
+    },
+    "kirePopcev": {
+      "name": "Kire Popcev",
+      "title": "Dentist",
+      "specialization": "General Dentistry Doctor",
+      "description": "Dentist with over 5 years of experience, dedicated to providing the highest quality dental care."
+    },
+    "blagicaTrencev": {
+      "name": "Blagica Trenchev",
+      "title": "Dentist",
+      "specialization": "General Dentistry Doctor",
+      "description": "Dentist with over 5 years of experience, specialized in general dentistry and preventive care."
+    },
+    "emilijaStojceva": {
+      "name": "Emilija Stojcheva",
+      "title": "Dentist",
+      "specialization": "General Dentistry Doctor",
+      "description": "Dentist with over 25 years of experience, focused on aesthetic dentistry and rehabilitation."
+    },
+    "ljupcoBikovski": {
+      "name": "Ljupco Bikovski",
+      "title": "Dentist",
+      "specialization": "General Dentistry Doctor",
+      "description": "Dentist with over 5 years of experience, dedicated to providing the highest quality dental care."
+    },
+    "adrijanaKotev": {
+      "name": "Adrijana Kotev",
+      "title": "Dentist",
+      "specialization": "General Dentistry Doctor",
+      "description": "Dentist with over 5 years of experience, specialized in general dentistry and preventive care."
+    },
+    "anaKacarska": {
+      "name": "Ana Kacarska",
+      "title": "Dentist",
+      "specialization": "General Dentistry Doctor",
+      "description": "Dentist with over 5 years of experience, dedicated to providing the highest quality dental care."
+    },
+    "lenceZimbakova": {
+      "name": "Lenche Zimbakova",
+      "title": "Administration",
+      "specialization": "",
+      "description": "Head of administration at Dental Center Zebekov, with over 5 years of experience."
+    },
+    "vericaCukarska": {
+      "name": "Verica Chukarska",
+      "title": "Dental Nurse",
+      "specialization": "",
+      "description": "Dental nurse with over 5 years of experience, dedicated to providing the highest quality of care."
+    },
+    "froskaIvanova": {
+      "name": "Froska Ivanova",
+      "title": "Dental Nurse",
+      "specialization": "",
+      "description": "Dental nurse with over 5 years of experience, specialized in assisting dental procedures."
+    },
+    "ivanaStojkova": {
+      "name": "Ivana Stojkova",
+      "title": "Dental Nurse",
+      "specialization": "",
+      "description": "Dental nurse with over 5 years of experience, dedicated to providing the highest quality of care."
+    },
+    "bojanaBozinova": {
+      "name": "Bojana Bozhinova",
+      "title": "Dental Nurse",
+      "specialization": "",
+      "description": "Dental nurse with over 5 years of experience, specialized in assisting dental procedures."
+    },
+    "vericaIlieva": {
+      "name": "Verica Ilieva",
+      "title": "Dental Nurse",
+      "specialization": "",
+      "description": "Dental nurse with over 5 years of experience, dedicated to providing the highest quality of care."
+    },
+    "anetaTodorova": {
+      "name": "Aneta Todorova",
+      "title": "Dental Nurse",
+      "specialization": "",
+      "description": "Dental nurse with over 5 years of experience, specialized in assisting dental procedures."
+    },
+    "gordanaStoev": {
+      "name": "Gordana Stoev",
+      "title": "Dental Nurse",
+      "specialization": "",
+      "description": "Dental nurse with over 5 years of experience, dedicated to providing the highest quality of care."
+    },
+    "emilijaTrbogazova": {
+      "name": "Emilija Trbogazova",
+      "title": "Dental Nurse",
+      "specialization": "",
+      "description": "Dental nurse with over 5 years of experience, specialized in assisting dental procedures."
+    },
+    "emilijaCvetkova": {
+      "name": "Emilija Cvetkova",
+      "title": "Dental Nurse",
+      "specialization": "",
+      "description": "Dental nurse with over 5 years of experience, dedicated to providing the highest quality of care."
+    }
+  },
+  "footer": {
+    "description": "Your trusted partner for comprehensive dental care. We provide exceptional dental services with a focus on comfort, quality, and patient satisfaction.",
+    "workingHours": "Mon-Fri: 8:00-20:00 | Sat: 9:00-17:00",
+    "ourServices": "Our Services",
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Info",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "allRightsReserved": "All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "services": {
+      "generalDentistry": "General Dentistry",
+      "cosmeticDentistry": "Cosmetic Dentistry",
+      "orthodontics": "Orthodontics",
+      "oralSurgery": "Oral Surgery",
+      "preventiveCare": "Preventive Care",
+      "emergencyCare": "Emergency Care"
+    }
+  },
+  "header": {
+    "bookAppointment": "Book Appointment",
+    "phone": "+389 70 515 734"
+  },
+  "about": {
+    "title": "About",
+    "titleHighlight": "Dental Center Zebekov",
+    "subtitle": "Dedicated to providing exceptional dental care with compassion, expertise, and the latest technology for over 25 years.",
+    "ourStory": "Our",
+    "ourStoryHighlight": "Story",
+    "storyParagraph1": "Dental Center Zebekov – founded in 1998 by Dr. Toshko Zebekov, began with a simple yet powerful vision: to provide top‑quality dental care that combines advanced technology with genuine compassion.",
+    "storyParagraph2": "What started as a small practice in Strumica has grown into a leading dental center in southeastern North Macedonia, serving thousands of patients across two convenient locations. Our commitment to excellence never wavers, and we continue to invest in the latest technology and training to ensure our patients receive the very best care.",
+    "storyParagraph3": "Today, we are proud to be recognized as leaders in dental innovation, offering comprehensive services from routine cleanings to complex surgical procedures—all delivered with the personal touch that has made us a trusted name in Macedonian dentistry.",
+    "yearsOfExcellence": "Years of Excellence",
+    "happyPatients": "Happy Patients",
+    "ourValues": "Our",
+    "ourValuesHighlight": "Values",
+    "valuesSubtitle": "These core values guide everything we do and shape the exceptional experience we provide to every patient.",
+    "values": {
+      "patientCenteredCare": {
+        "title": "Patient-Centered Care",
+        "description": "Every decision we make is focused on what's best for our patients' health and comfort."
+      },
+      "qualitySafety": {
+        "title": "Quality & Safety",
+        "description": "We maintain the highest standards of quality and safety in all our treatments."
+      },
+      "professionalExcellence": {
+        "title": "Professional Excellence",
+        "description": "Our team continuously updates their skills to provide the most advanced care."
+      },
+      "continuousLearning": {
+        "title": "Continuous Learning",
+        "description": "We stay at the forefront of dental innovation through ongoing education."
+      }
+    },
+    "ourJourney": "Our",
+    "ourJourneyHighlight": "Journey",
+    "journeySubtitle": "From humble beginnings to becoming Macedonia's leading dental practice, here's our story of growth and innovation.",
+    "timeline": {
+      "2008": {
+        "title": "Foundation",
+        "description": "Dr. Marko Zebekov established the first clinic in Strumica with a vision to provide world-class dental care."
+      },
+      "2012": {
+        "title": "Expansion",
+        "description": "Opened our second location in Novo Selo to serve patients across Macedonia."
+      },
+      "2016": {
+        "title": "Technology Upgrade",
+        "description": "Invested in state-of-the-art digital equipment and modern treatment methods."
+      },
+      "2020": {
+        "title": "Team Growth",
+        "description": "Expanded our team with specialized dentists in various fields of dentistry."
+      },
+      "2024": {
+        "title": "Innovation Leader",
+        "description": "Became the leading dental practice in Macedonia with cutting-edge treatments."
+      }
+    },
+    "ourAchievements": "Our",
+    "ourAchievementsHighlight": "Achievements",
+    "achievementsSubtitle": "Recognition and milestones that reflect our commitment to excellence in dental care and patient satisfaction.",
+    "achievements": {
+      "modernTechnology": {
+        "title": "Modern Technology",
+        "description": "Equipped with the latest dental technology for optimal results."
+      },
+      "happyPatients": {
+        "title": "5000+ Happy Patients",
+        "description": "Trusted by thousands of patients across Macedonia."
+      },
+      "experience": {
+        "title": "25+ Years Experience",
+        "description": "Over two decades of providing exceptional dental care."
+      }
+    },
+    "joinOurFamily": "Join Our Dental Family",
+    "joinDescription": "Experience the difference that personalized, professional dental care can make. Schedule your appointment today and discover why thousands of patients trust us with their smiles.",
+    "scheduleConsultation": "Schedule Consultation",
+    "learnMore": "Learn More About Us"
+  },
+  "services": {
+    "title": "Our",
+    "titleHighlight": "Services",
+    "subtitle": "Comprehensive dental care with state-of-the-art technology and personalized treatment plans for every patient.",
+    "whyChoose": "Why Choose",
+    "whyChooseHighlight": "Our Services",
+    "whyChooseSubtitle": "We combine advanced technology with personalized care to deliver exceptional dental experiences.",
+    "bookAppointment": "Book Appointment",
+    "features": {
+      "advancedTechnology": {
+        "title": "Advanced Technology",
+        "description": "State-of-the-art equipment for precise and comfortable treatments."
+      },
+      "personalizedCare": {
+        "title": "Personalized Care",
+        "description": "Tailored treatment plans designed specifically for your needs."
+      },
+      "expertTeam": {
+        "title": "Expert Team",
+        "description": "Experienced professionals with specialized training and certifications."
+      },
+      "flexibleScheduling": {
+        "title": "Flexible Scheduling",
+        "description": "Convenient appointment times that fit your busy lifestyle."
+      }
+    },
+    "servicesList": {
+      "dentalMedicine": {
+        "name": "Dental Medicine",
+        "description": "Comprehensive dental care including cleanings, fillings, and routine checkups.",
+        "duration": "30-60 min",
+        "price": "From €50",
+        "features": [
+          "Dental Examination and Diagnosis",
+          "Dental Cleanings",
+          "Cavity Fillings",
+          "Endodontics",
+          "Tooth Extractions",
+          "First Aid"
+        ]
+      },
+      "aestheticDentistry": {
+        "name": "Aesthetic Dentistry",
+        "description": "Transform your smile with our advanced cosmetic dental procedures.",
+        "duration": "60-120 min",
+        "price": "From €200",
+        "features": [
+          "Teeth Whitening",
+          "Fillers",
+          "Teeth Bonding",
+          "Smile Makeover"
+        ]
+      },
+      "orthodontics": {
+        "name": "Orthodontics",
+        "description": "Straighten your teeth with traditional braces or modern clear aligners.",
+        "duration": "45-90 min",
+        "price": "From €1500",
+        "features": [
+          "Fixed Braces",
+          "Metal Braces",
+          "Porcelain Braces",
+          "Self-Ligating",
+          "Clear Aligners",
+          "Removable Braces",
+          "Myofunctional Appliances"
+        ]
+      },
+      "oralSurgery": {
+        "name": "Oral Surgery",
+        "description": "Expert surgical procedures including extractions and implant placement.",
+        "duration": "60-180 min",
+        "price": "From €300",
+        "features": [
+          "Surgical Tooth Extractions",
+          "Cystectomy",
+          "Apicoectomy",
+          "Gingivoplasty"
+        ]
+      },
+      "implantology": {
+        "name": "Implantology",
+        "description": "Expert surgical procedures including extractions and implant placement.",
+        "duration": "60-180 min",
+        "price": "From €300",
+        "features": [
+          "Two-Piece Implants",
+          "One-Piece Implants",
+          "All-on-4 Implants",
+          "All-on-6 Implants",
+          "Sinus Lift"
+        ]
+      },
+      "prostheticDentistry": {
+        "name": "Prosthetic Dentistry",
+        "description": "Gentle, specialized dental care designed specifically for children.",
+        "duration": "30-45 min",
+        "price": "From €40",
+        "features": [
+          "Dental Crowns",
+          "Dental Bridges",
+          "Veneers",
+          "Inlays and Onlays",
+          "Full Dentures",
+          "Partial Dentures"
+        ]
+      },
+      "xrayDiagnostics": {
+        "name": "X-Ray Diagnostics",
+        "description": "24/7 emergency dental services for urgent dental problems.",
+        "duration": "30-90 min",
+        "price": "From €80",
+        "features": ["Panoramic X-Rays", "3D X-Ray (CBCT)"]
+      }
+    },
+    "readyToTransform": "Ready to Transform Your Smile?",
+    "readyDescription": "Schedule your consultation today and take the first step towards optimal oral health and a beautiful smile.",
+    "bookConsultation": "Book Consultation",
+    "callNow": "Call Now: +389 70 515 734"
+  },
+  "locations": {
+    "title": "Our",
+    "titleHighlight": "Locations",
+    "subtitle": "Visit us at our convenient locations in Strumica and Novo Selo. Modern facilities with the latest dental technology.",
+    "findUsOnMap": "Find Us on the",
+    "findUsOnMapHighlight": "Map",
+    "mapSubtitle": "Both of our locations are easily accessible and offer convenient parking options for our patients.",
+    "visitUsToday": "Visit Us Today",
+    "visitDescription": "Choose the location that's most convenient for you and experience the difference of quality dental care.",
+    "scheduleAppointment": "Schedule Appointment",
+    "callUsNow": "Call Us Now",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "hours": "Hours",
+    "parking": "Parking",
+    "features": "Features",
+    "bookAppointment": "Book Appointment",
+    "getDirections": "Get Directions",
+    "strumica": {
+      "name": "Strumica",
+      "address": "Kiro Abrashev 32, 2400 Strumica",
+      "phone": "+389 70 515 734",
+      "email": "contact@zebekov.mk",
+      "hours": {
+        "weekdays": "Monday - Friday: 8:00 - 20:00",
+        "saturday": "Saturday: 9:00 - 17:00",
+        "sunday": "Sunday: Closed"
+      },
+      "parking": "Free parking available",
+      "features": [
+        "Digital X-Ray",
+        "Modern Equipment",
+        "Comfortable Waiting Area",
+        "Wheelchair Accessible"
+      ]
+    },
+    "novoselo": {
+      "name": "Novo Selo",
+      "address": "Marshal Tito 42, 2434 Novo Selo",
+      "phone": "+389 71 393 199",
+      "email": "novoselo@zebekov.mk",
+      "hours": {
+        "weekdays": "Monday - Friday: 8:00 - 20:00",
+        "saturday": "Saturday: 9:00 - 17:00",
+        "sunday": "Sunday: Closed"
+      },
+      "parking": "Street parking available",
+      "features": [
+        "Scenic Lake View",
+        "Tourist-Friendly",
+        "Modern Facilities",
+        "Emergency Services"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "titleHighlight": "Us",
+    "subtitle": "Ready to schedule your appointment? Get in touch with us today. We're here to answer your questions and help you achieve your perfect smile.",
+    "bookYourAppointment": "Book Your",
+    "bookYourAppointmentHighlight": "Appointment",
+    "formDescription": "Fill out the form below and we'll get back to you within 24 hours to confirm your appointment.",
+    "getInTouch": "Get in",
+    "getInTouchHighlight": "Touch",
+    "getInTouchDescription": "We're here to help you with all your dental needs. Contact us through any of the methods below or visit us at one of our convenient locations.",
+    "form": {
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Your full name",
+      "fullNameRequired": "Full name is required",
+      "email": "Email Address",
+      "emailPlaceholder": "your@email.com",
+      "emailRequired": "Email is required",
+      "phone": "Phone Number",
+      "phonePlaceholder": "+389 70 123 456",
+      "preferredLocation": "Preferred Location",
+      "selectLocation": "Select location",
+      "strumicaCenter": "Strumica Center",
+      "novoseloBranch": "Novo Selo Branch",
+      "serviceNeeded": "Service Needed",
+      "selectService": "Select service",
+      "generalDentistry": "General Dentistry",
+      "cosmeticDentistry": "Cosmetic Dentistry",
+      "orthodontics": "Orthodontics",
+      "oralSurgery": "Oral Surgery",
+      "pediatricDentistry": "Pediatric Dentistry",
+      "emergencyCare": "Emergency Care",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your dental needs or any questions you have...",
+      "sending": "Sending...",
+      "sendMessage": "Send Message"
+    },
+    "thankYou": "Thank You!",
+    "thankYouMessage": "Your message has been sent successfully. We'll contact you soon!",
+    "contactMethods": {
+      "phone": {
+        "title": "Phone",
+        "strumica": "Strumica",
+        "novoselo": "Novo Selo"
+      },
+      "email": {
+        "title": "Email",
+        "general": "General",
+        "appointments": "Appointments"
+      },
+      "locations": {
+        "title": "Locations",
+        "strumica": "Strumica",
+        "novoselo": "Novo Selo"
+      }
+    },
+    "workingHours": {
+      "title": "Working Hours",
+      "mondayFriday": "Monday - Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday",
+      "closed": "Closed"
+    },
+    "emergencyContact": {
+      "title": "Emergency Contact",
+      "description": "For dental emergencies outside business hours:",
+      "phone": "+389 70 123 999"
+    },
+    "visitOurLocations": "Visit Our",
+    "visitOurLocationsHighlight": "Locations",
+    "visitDescription": "Find us at our convenient locations in Strumica and Novo Selo. Both clinics offer the same high-quality care and modern facilities."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "add": "Add",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "view": "View",
+    "download": "Download",
+    "upload": "Upload",
+    "required": "Required",
+    "optional": "Optional",
+    "yes": "Yes",
+    "no": "No",
+    "ok": "OK",
+    "confirm": "Confirm",
+    "warning": "Warning",
+    "info": "Information"
+  }
+}

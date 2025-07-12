@@ -16,12 +16,12 @@ export default function LoginPage() {
     setLoading(true)
     setError(null)
     try {
-      const response = await authAPI.login(username, password)
+      const response = await authAPI.login({ username, password })
       localStorage.setItem('access_token', response.data.access)
       localStorage.setItem('refresh_token', response.data.refresh)
       router.push('/')
     } catch (err) {
-      setError('Invalid username or password')
+      setError('Неважечко корисничко име или лозинка')
     } finally {
       setLoading(false)
     }
@@ -30,11 +30,11 @@ export default function LoginPage() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100">
       <div className="w-full max-w-md rounded-lg bg-white p-8 shadow-md">
-        <h1 className="mb-6 text-center text-2xl font-bold text-gray-900">Login</h1>
+        <h1 className="mb-6 text-center text-2xl font-bold text-gray-900">Најава</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="username" className="block text-sm font-medium text-gray-700">
-              Username
+              Корисничко име
             </label>
             <input
               type="text"
@@ -47,7 +47,7 @@ export default function LoginPage() {
           </div>
           <div>
             <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-              Password
+              Лозинка
             </label>
             <input
               type="password"
@@ -64,7 +64,7 @@ export default function LoginPage() {
             disabled={loading}
             className="w-full rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50"
           >
-            {loading ? 'Logging in...' : 'Login'}
+            {loading ? 'Се најавувам...' : 'Најави се'}
           </button>
         </form>
       </div>
